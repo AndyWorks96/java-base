@@ -1,8 +1,28 @@
 package inheritance;
 
+import java.time.LocalDate;
+
 public class Employee {
-	public static void main(String[] args) {
 	
-		System.out.println("雇员测试");
+	private String name;
+	private double salary;
+	private LocalDate hireDay;
+	public Employee(String name,double salary,int year,int month,int day) {
+		this.name=name;
+		this.salary=salary;
+		this.hireDay=LocalDate.of(year, month, day);
+	}
+	public String getName()
+	{
+		return name;
+	}
+	public double getSalary()
+	{
+		return salary;
+	}
+	public void getHireDay(double byPercent)
+	{
+		double raise=salary*byPercent/100;
+		salary+=raise;
 	}
 }
